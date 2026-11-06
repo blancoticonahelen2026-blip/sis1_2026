@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECUACION DE SEGUNDO GRADO</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #4caf50;
+        }
+        h2{
+            text-align: center;
+            color: #ececec;
+        }
+        form{
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc  ;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label{
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+
+        }
+        input[type="number"], select{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="button"]{
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover{
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>ECUACIONES DE SEGUNDO GRADO</h2>
+    <form action="a" method="post">
+        <table>
+            <tr>
+                <td>
+                    INTRODUZCA VALORES <br>
+    <input type="number" id="a" placeholder="Ingresa el valor de a"><br>
+    <input type="number" id="b" placeholder="Ingresa el valor de b"><br>
+    <input type="number" id="c" placeholder="Ingresa el valor de c"><br>
+    <input type="button" value="GENERAR" onclick="calcular()">
+                </td>
+                <td>
+                    <img src="formula.jfif" width="100" alt="">
+                </td>
+            </tr>
+        </table>
+    <h3>RESULTADO</h3>
+    <div id="res" style="font-size: 18px; color: darkgreen;">
+    ...</div>
+    </form>
+</body>
+</html>
+<script src="js/JS funciones.js"></script>
+<script>
+    function calcular(){
+        a=document.getElementById('a').value;
+        b=document.getElementById('b').value;
+        c=document.getElementById('c').value;
+        if(a!=0){
+        dis=Math.pow(b,2)-(4*a*c);
+        res='';
+        if(dis<0){
+            res='<h3 style="color:red">Discriminante no puede ser negativo</h3>';
+        }
+        else{
+        x1=(-b+Math.sqrt(dis))/(2*a);
+        x2=(-b-Math.sqrt(dis))/(2*a);
+        res='x<sub>1</sub> = '+x1+'<br>X<sub>2</sub> ='+x2;
+        }
+    }
+    else{
+        res='<h3 style="color:red">Valor de A no puede ser 0 (div 0 error)</h3>';
+    }
+    document.getElementById('res').innerHTML = res;
+    }
+</script>

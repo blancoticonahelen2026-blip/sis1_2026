@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTOS</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #4CAF50;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ececec;
+        }
+
+        form {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+            overflow-x: auto;
+        }
+
+        form h3 {
+            text-align: center;
+        }
+
+        .tabla-bootstrap {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            table-layout: fixed;
+        }
+
+        .tabla-bootstrap th,
+        .tabla-bootstrap td {
+            padding: 12px;
+            vertical-align: middle;
+            border: 1px solid #dee2e6;
+            text-align: center;
+            overflow-wrap: break-word;
+        }
+
+        .tabla-bootstrap th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .tabla-bootstrap tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        .tabla-bootstrap select,
+        .tabla-bootstrap input[type="number"],
+        .tabla-bootstrap input[type="text"] {
+            width: 100%;
+            min-width: 0;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #foto, #foto2 {
+            display: block;
+            width: 200px;
+            max-width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin: 10px auto;
+            box-sizing: border-box;
+        }
+
+        .total-pagar {
+            text-align: right;
+            font-size: 22px;
+            font-weight: bold;
+            color: #000000;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                width: 98%;
+                padding: 8px;
+            }
+
+            .tabla-bootstrap th,
+            .tabla-bootstrap td {
+                padding: 5px;
+                font-size: 11px;
+            }
+
+            #foto, #foto2 {
+                height: 100px;
+            }
+
+            .total-pagar {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>OBJETOS</h2>
+    <form action="script.php" >
+        <h3>SELECCIONAR EL PRODUCTO</h3>
+        <div id="datos"></div>
+    </form>
+</body>
+</html>
+ <script>
+    const producto = {
+        "nombre": "Servidor DELL POWEREDGE R410",
+        "precio": 15500.95,
+        "tipo": "rackeable",
+        "sucursales":["zona sur","el alto","centro"],
+        "caracteristicas":{
+            "discos":"4 SSD",
+            "USB":"6 puertos",
+            "RAM":"128 GB"
+        }
+    }
+    document.getElementById("datos").innerHTML = 
+        "<strong>NOMBRE:</strong> " + producto.nombre + " <br>" +
+        "<strong>PRECIO:</strong> " + producto.precio + " <br>" +
+        "<strong>TIPO:</strong> " + producto.tipo + " <br>" +
+        "<strong>SUCURSALES:</strong> " + producto.sucursales.join(", ") + " <br>" +
+        "<strong>CARACTERISTICAS:</strong> <br>" +
+        "<ul class='caracteristicas-lista'>" +
+            "<li><strong>-DISCOS:</strong> " + producto.caracteristicas.discos + "</li>" +
+            "<li><strong>-USB:</strong> " + producto.caracteristicas.USB + "</li>" +
+            "<li><strong>-RAM:</strong> " + producto.caracteristicas.RAM + "</li>" +
+        "</ul>";
+</script>
+
+

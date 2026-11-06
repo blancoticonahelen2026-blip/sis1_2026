@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOSTRAR PRODUCTO</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #14532d, #4caf50, #86efac);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+        }
+
+        #resultado {
+            width: 100%;
+            max-width: 380px;
+            padding: 35px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            color: #333;
+            font-size: 17px;
+            line-height: 2;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-top: 6px solid #16a34a;
+            transition: transform 0.3s ease;
+        }
+
+        #resultado:hover {
+            transform: translateY(-5px);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>PRODUCTO GUARDADO</h2>
+
+    <p id="resultado"></p>
+
+    <script>
+        let producto = JSON.parse(localStorage.getItem("producto"));
+
+        if (producto) {
+            document.getElementById("resultado").innerHTML =
+            "nombre: " + producto.nombre +
+            "<br>precio: " + producto.precio;
+        } else {
+            document.getElementById("resultado").innerHTML =
+            "NO HAY DATOS GUARDADOS"
+        }
+
+    </script>
+
+</body>
+</html>

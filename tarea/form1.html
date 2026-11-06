@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #4caf50;
+        }
+        h2{
+            text-align: center;
+            color: #ececec;
+        }
+        form{
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc  ;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label{
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+
+        }
+        input[type="text"], select{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"]{
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover{
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>FORMULARIO DE REGISTRO</h2>
+    <form action="procesar.php" method="post">
+    <label for="nombres">Nombres:</label>
+    <input type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre">
+
+    <label for="apellidos">Apellidos</label>
+    <input type="text" name="apellidos" id="apellidos" placeholder="Ingrese su apellido">
+     
+    <label for="pais">Pais:</label>
+    <select name="pais" id="pais">
+            <option value="">Seleccione un pais</option>
+            <option value="">Mexico</option>
+            <option value="">Colombia</option>
+            <option value="">Peru</option>
+    </select>
+<input type="submit" value="enviar">
+</form>
+</body>
+</html>

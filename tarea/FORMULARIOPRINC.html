@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #14532d, #4caf50, #86efac);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 30px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+        }
+
+        .formulario {
+            width: 100%;
+            max-width: 380px;
+            padding: 35px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-top: 6px solid #16a34a;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #16a34a;
+            box-shadow: 0 0 6px rgba(22,163,74,0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #16a34a, #4caf50);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #15803d, #2e8b40);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>REGISTRAR PRODUCTO</h2>
+
+    <div class="formulario">
+
+        <input type="text" id="nombre" placeholder="Nombre del producto">
+
+        <input type="number" id="precio" placeholder="Precio del producto">
+
+        <button onclick="guardar()">GUARDAR</button>
+
+    </div>
+
+    <script>
+        function guardar() {
+            let producto = {
+                nombre: document.getElementById("nombre").value,
+                precio: document.getElementById("precio").value
+            };
+
+            localStorage.setItem("producto", JSON.stringify(producto));
+
+            alert("DATOS GUARDADOS CORRECTAMENTE")
+        }
+    </script>
+
+</body>
+</html>

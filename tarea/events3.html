@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTOS</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #4CAF50;
+        }
+        h2{
+            text-align: center;
+            color: #ececec;
+        }
+        form{
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: #f9f9f9;
+        }
+        label{
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="number"], input[type="email"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+.tabla-bootstrap {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.tabla-bootstrap th,
+.tabla-bootstrap td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.tabla-bootstrap thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.tabla-bootstrap tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.tabla-bootstrap tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+    </style>
+</head>
+<body>
+    <h2>EVENTOS</h2>
+    <form>
+    
+ <h3>Selecciona un país y una ciudad</h3>
+
+    <label for="pais">País:</label>
+    <select id="pais">
+        <option value="">Selecciona un país</option>
+        <option value="bolivia">Bolivia</option>
+        <option value="argentina">Argentina</option>
+        <option value="espana">España</option>
+    </select>
+
+    <br><br>
+
+    <!-- SELECT de Ciudad -->
+    <label>Ciudad:</label>
+    <select id="ciudad">
+        <option value="">Seleccione primero un país</option>
+    </select>
+    </form>
+</body>
+</html>
+<script src="js/funciones.js"></script>
+<script>
+    
+     const pais = document.getElementById("pais");
+     const ciudad = document.getElementById("ciudad");
+
+        pais.addEventListener("change", function() {
+
+            if (pais.value === "bolivia") {
+
+                ciudad.innerHTML = `
+                    <option value="">Seleccione una ciudad</option>
+                    <option value="lapaz">La Paz</option>
+                    <option value="santacruz">Santa Cruz</option>
+                    <option value="cochabamba">Cochabamba</option>
+                `;
+
+            } else if (pais.value === "argentina") {
+
+                ciudad.innerHTML = `
+                    <option value="">Seleccione una ciudad</option>
+                    <option value="buenosaires">Buenos Aires</option>
+                    <option value="cordoba">Córdoba</option>
+                    <option value="mendoza">Mendoza</option>
+                `;
+
+            } else if (pais.value === "espana") {
+
+                ciudad.innerHTML = `
+                    <option value="">Seleccione una ciudad</option>
+                    <option value="madrid">Madrid</option>
+                    <option value="barcelona">Barcelona</option>
+                    <option value="sevilla">Sevilla</option>
+                `;
+
+            } else {
+
+                ciudad.innerHTML = `
+                    <option value="">Seleccione primero un país</option>
+                `;
+
+            }
+
+        });
+</script>
