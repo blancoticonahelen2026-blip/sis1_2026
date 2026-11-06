@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINUSCULAS Y MAYUSCULAS</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+ <header>
+        <img src="../baner.jpeg" alt="Banner Principal">
+    </header>
+    <nav class="navbar">
+        <ul class="menu-principal">
+            <li><a href="../inicio.html">Inicio</a></li>
+           <li>
+                <a href="#">Funciones Matematicas</a>
+                <ul class="dropdown">
+                    
+                    <li><a href="../mate/facto.html">FACTORIAL</a></li>
+                    <li><a href="../mate/fibonacci.html">FIBONACCI</a></li>
+                    <li><a href="../mate/nprimo.html">N.PRIMOS</a></li>
+                    <li><a href="../mate/ecsgdogrado.html">EC.SGDO GRADO</a></li>
+                    <li><a href="../mate/nperfecto.html">N.PERFECTO</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Funcion cadenas</a>
+                <ul class="dropdown">
+                    <li><a href="../cadenas/palindromo.html">PALINDROMO</a></li>
+                    <li><a href="../cadenas/primer.html">PRIMER LETRA</a></li>
+                    <li><a href="../cadenas/buscaryreemp.html">BUSCAR Y REEMPLAZAR</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Funcion de fecha y hora</a>
+                <ul class="dropdown">
+                    <li><a href="../fecha y hora/fecha.html">Fecha de hoy</a></li>
+                    <li><a href="../fecha y hora/reloj.html">RELOJ</a></li>
+                    <li><a href="../fecha y hora/transcurso.html">TRANSCURSO</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Funcion con  Arrays</a>
+                <ul class="dropdown">
+                    <li><a href="aumentar.html">AUMENTAR</a></li>
+                    <li><a href="girar.html">GIRAR</a></li>
+                    <li><a href="minusmayus.html">MINUS Y MAYUS</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+<div class="seccion-intercalar">
+    <h2>INTERCALAR MAYÚSCULAS Y MINÚSCULAS</h2>
+    <form onsubmit="return false;">
+        <label for="txtI"><b>Adicione elementos al vector:</b></label>
+        <input type="text" id="txtI" placeholder="ingrese palabra ">
+        
+        <div class="grupo-botones">
+            <input type="button" value="Adicionar" onclick="add()">
+            <input type="button" value="Transformar Vector" onclick="tra()">
+        </div>
+
+        <h3>VECTOR ORIGINAL:</h3>
+        <div id="resO">[]</div>
+
+        <h3>RESULTADO:</h3>
+        <div id="resT">[]</div>
+    </form>
+</div>
+
+    </section>
+    <footer class="pie-pagina">
+        <div class="footer-contenedor">
+            <h3>INCOS LA PAZ </h3>
+                <p>SISTEMAS INFORMATICOS</p>
+                <P>LA PAZ - Bolivia</P>
+           </div>
+                    <div class="Contacto-footer">
+                        <h3>CONTACTO</h3>
+                        <p>62535553</p>
+                        <p> blanco.ticona.helen.2026@incoslapaz.org</p>
+                    </div>
+    </footer>
+</body>
+</html>
+<script>
+    var v = [];
+
+    function add() {
+        let x = document.getElementById('txtI').value;
+        if (x !== "") {
+            v.push(x);
+            document.getElementById('txtI').value = "";
+            ver('resO', v);
+        }
+    }
+
+    function tra() {
+        let res = [];
+        for (let i = 0; i < v.length; i++) {
+            if (i % 2 === 0) {
+                res.push(v[i].toUpperCase());
+            } else {
+                res.push(v[i].toLowerCase());
+            }
+        }
+        ver('resT', res);
+    }
+
+    function ver(id, arr) {
+        let t = "[";
+        for (let i = 0; i < arr.length; i++) {
+            if (i === 0) {
+                t = t + '"' + arr[i] + '"';
+            } else {
+                t = t + ',"' + arr[i] + '"';
+            }
+        }
+        t = t + "]";
+        document.getElementById(id).innerText = t;
+    }
+</script>
